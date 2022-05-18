@@ -4,7 +4,7 @@ import type { RequestHandler } from './index';
 export const get: RequestHandler = async ({ locals }) => {
 	// locals.userid comes from src/hooks.js
 	const response = await api('get', `todos/${locals.userid}`);
-
+	
 	if (response.status === 404) {
 		// user hasn't created a todo list.
 		// start with an empty array

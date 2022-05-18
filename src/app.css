@@ -17,6 +17,7 @@
 }
 
 body {
+	font-family: var(--font-mono);
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--primary-color);
@@ -31,6 +32,7 @@ body {
 body::before {
 	content: '';
 	width: 80vw;
+
 	height: 100vh;
 	position: absolute;
 	top: 0;
@@ -105,3 +107,63 @@ button:focus:not(:focus-visible) {
 		font-size: 2.4rem;
 	}
 }
+
+/* Scroll Bar */
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+/* Layout grid spacing. */
+:root {
+	--mdc-layout-grid-margin-desktop: 0;
+	--mdc-layout-grid-gutter-desktop: 0;
+	--mdc-layout-grid-column-width-desktop: 72px;
+	--mdc-layout-grid-margin-tablet: 0;
+	--mdc-layout-grid-gutter-tablet: 0;
+	--mdc-layout-grid-column-width-tablet: 72px;
+	--mdc-layout-grid-margin-phone: 0;
+	--mdc-layout-grid-gutter-phone: 0;
+	--mdc-layout-grid-column-width-phone: 72px;
+}
+
+/* color fonte fieldText */
+/* fonte in text */
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+	color: rgb(9, 8, 8);
+}
+
+
+/*  Drawer  */
+.mdc-drawer {
+	border-color: rgba(255, 255, 255, 0.12);
+	background-color: #212125;
+	background-color: var(--mdc-theme-surface, #d4eff7);
+
+	background: url(imags/i1.png) 0% 0% repeat-y;
+	background-size: 100% auto;
+	width: 256px;
+}
+
+.mdc-drawer-app-content {
+	margin-left: 256px;
+	margin-right: 0;
+}
+

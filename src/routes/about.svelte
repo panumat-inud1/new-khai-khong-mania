@@ -1,50 +1,51 @@
-<script context="module">
-	import { browser, dev } from '$app/env';
-
-	// we don't need any JS on this page, though we'll load
-	// it in dev so that we get hot module replacement...
-	export const hydrate = dev;
-
-	// ...but if the client-side router is already loaded
-	// (i.e. we came here from elsewhere in the app), use it
-	export const router = browser;
-
-	// since there's no dynamic data here, we can prerender
-	// it so that it gets served as a static asset in prod
-	export const prerender = true;
+<script>
+	import Cardmain from '$lib/card/cardmain.svelte';
 </script>
-
 <svelte:head>
 	<title>About</title>
-	<meta name="description" content="About this app" />
+	<meta name="description" content="Home this app" />
 </svelte:head>
-
-<div class="content">
-	<h1>About this app</h1>
-
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
-
-	<pre>npm init svelte</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using
-		it with JavaScript disabled!
-	</p>
+<div class="card-display">
+	<Cardmain>
+		<div slot="content">
+			<h5>
+				Birds price starts with 35 gold coins. Automatic system of eggs collecting! Collecting eggs
+				without losses and restrictions in time! collect eggs as it's convenient for you! Even once
+				an hour, even once a day, even once a month! The eggs don't disappear or get rotten! Well
+				organized market allows to sell all the eggs for gold coins and gold bars immediately! In
+				the process of the game new blocks will be added which will allow to fill up reserve for
+				buying the eggs that will give additional guarantee to the players! Maximal fast payoffs of
+				money to your wallet! You will find a lot of birds, each bird has its own price and its
+				productivity, each subsequent bird will bring more income than the previous one. There are
+				several types of resources in the project - crystals and gold, there are 2 types of gold:
+				«gold coins» (for purchases) and «gold bars» (for withdrawal). For gold coins (for
+				purchases), you can buy new birds. Gold bars for the withdrawal and crystals you can
+				exchange for real money, and withdraw them to your electronic wallet automatically.
+			</h5>
+			<hr />
+			<h5>
+				To buy birds you have to replenish your balance for purchases on the amount you need. After
+				replenishing your account, go to «Bird shop» And buy the birds you want. Right after the
+				purchase of birds you will automatically receive eggs from them, you can see their number in
+				the section «Eggs warehouse» and collect them for further sale for gold and use gold bars to
+				withdraw real money. Still have questions related to Coin-Birds? To solve the problem it is
+				enough to apply for help in support of our project and you will be answered by our support
+				service, which works 24/7 especially for you!
+			</h5>
+		</div>
+	</Cardmain>
 </div>
 
 <style>
-	.content {
-		width: 100%;
-		max-width: var(--column-width);
-		margin: var(--column-margin-top) auto 0 auto;
+	p {
+		text-align-last: center;
+		text-transform: capitalize;
+	}
+
+	h3,
+	h4,
+	h5 {
+		text-transform: capitalize;
+		color: black;
 	}
 </style>
