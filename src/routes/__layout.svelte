@@ -42,7 +42,7 @@
 				</div>
 			</main>
 
-			<img src="imags/layer.png" alt="footer" />
+			<img src="/imags/layer.png" alt="footer" />
 		</div>
 	</div>
 {/if}
