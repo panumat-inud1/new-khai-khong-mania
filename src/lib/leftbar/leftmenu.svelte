@@ -147,7 +147,7 @@
 
 	/* Card login*/
 	a {
-		font-size: 10%;
+		font-size: 13.5px;
 		list-style: none;
 	}
 	.col-2 {
