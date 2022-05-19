@@ -2,13 +2,16 @@
 	import Button, { Label } from '@smui/button';
 	$: now = new Date();
 	export let playgame: boolean;
-</script>
 
+	function back() {
+		window.location.href = '/';
+	}
+</script>
 
 <div class="back" />
 <footer>
 	{#if playgame}
-		<Button variant="raised" on:click={() => (playgame = !playgame)}> Back </Button>
+		<Button variant="raised" on:click={() => (playgame = !playgame)}>Back</Button>
 	{/if}
 
 	<p>Copyright &copy; {now.getFullYear()} <a href="http://www.fysidea.com">Fysidea Team.</a></p>
