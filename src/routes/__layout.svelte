@@ -10,7 +10,7 @@
 	let innerHeight;
 	let open = false;
 
-	export let playgame = true;
+	export let playgame = false;
 	const phone = 840;
 </script>
 
@@ -24,7 +24,7 @@
 			<!-- screen on Phone -->
 			{#if innerWidth < phone}
 				<Topbar bind:open />
-				<Leftbar {playgame} bind:open />
+				<Leftbar bind:open />
 			{/if}
 			<!-- End screen on Phone -->
 

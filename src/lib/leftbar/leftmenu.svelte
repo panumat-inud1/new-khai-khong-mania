@@ -15,7 +15,7 @@
 	let password = '';
 
 	function active() {
-		window.location.href = 'profile';
+		window.location.href = '/profile';
 	}
 	let url = 'profile';
 
