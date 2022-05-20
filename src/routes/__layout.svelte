@@ -8,14 +8,8 @@
 <svelte:window bind:innerWidth bind:innerHeight />
 
 <div class="container-full" style="height:{innerHeight}px;">
-	<Cardgame height={innerHeight -16} widht={(innerWidth-innerHeight)+16}>
-		<div slot="content">
-
-			<span>widht {innerWidth} height {innerHeight}</span>
-			<span>widht {innerWidth - innerHeight}</span>
-
-			
-		</div>
+	<Cardgame height={innerHeight} widht={innerWidth}>
+		
 	</Cardgame>
 </div>
 
