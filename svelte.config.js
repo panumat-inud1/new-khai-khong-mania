@@ -1,4 +1,4 @@
-//import adapter from '@sveltejs/adapter-node';
+//import adapter from '@sveltejs/adapter-node'; doker
 import adapter from '@sveltejs/adapter-netlify';
 
 import preprocess from 'svelte-preprocess';

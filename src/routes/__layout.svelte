@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	/*import Header from '$lib/header/Header.svelte';*/
 	import Topbar from '$lib/topbar/Topbar.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
@@ -10,7 +11,7 @@
 	let innerHeight;
 	let open = false;
 
-	export let playgame = true;
+	export let playgame = false;
 	const phone = 840;
 </script>
 
