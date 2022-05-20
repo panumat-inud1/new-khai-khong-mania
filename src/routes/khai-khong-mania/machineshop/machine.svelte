@@ -88,24 +88,24 @@
 			action: '/sefood',
 			x: 85,
 			y: 50
-		},
-		{
-			id: 11,
-			shopName: 'SEAFOOD',
-			images: '/imags/machine/11.png',
-			action: '/sefood',
-			x: 85,
-			y: 50
 		}
 	];
 </script>
 
+
 <div class="bg-shop">
 	<div class="content-machine">
+		<div class="back-page" >
+			<Button variant="raised" href="/khai-khong-mania" >BACK</Button>
+		</div>
+		
 		{#each machine as m, i}
 			<div class="card-shop">
+				
 				<div class="col-2">
-					<div style="text-align: center;"><img style="width: 50%;height: 90%;" src={m.images} alt="" /></div>
+					<div style="text-align: center;">
+						<img style="width: 50%;height: 90%;" src={m.images} alt="" />
+					</div>
 
 					<div class="fonte-shop">
 						<div><span>ชื่อเครื่อง</span></div>
@@ -124,6 +124,12 @@
 </div>
 
 <style>
+	
+
+	.back-page{
+		position: absolute;
+		z-index: 5;
+	}
 	.card-shop {
 		margin: 1%;
 		padding: 1%;
@@ -146,11 +152,10 @@
 		width: 100%;
 		height: 100%;
 		left: 0%;
-		top:0%;
+		top: 0%;
 		position: absolute;
 		background-color: rgb(218, 242, 245);
-        border-radius: 1%;
-        
+		border-radius: 1%;
 	}
 
 	p {

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fade, fly } from 'svelte/transition';
 	export let x;
 	export let y;
 	export let url;
@@ -8,7 +9,7 @@
 
 
 
-	<img class="items" style="top:{y}%;left:{x}%;width:{width}%;height:{height}%;"  src={url} alt="" />
+	<img in:fly="{{ x: 200, duration: 1000 }}" out:fade class="items" style="top:{y}%;left:{x}%;width:{width}%;height:{height}%;"  src={url} alt="" />
 
 
 <!-- <div
@@ -18,5 +19,6 @@
 <style>
 	.items {
 		position: absolute;
+		z-index: 1;
 	}
 </style>

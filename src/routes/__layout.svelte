@@ -10,7 +10,7 @@
 	let innerHeight;
 	let open = false;
 
-	export let playgame = false;
+	export let playgame = true;
 	const phone = 840;
 </script>
 

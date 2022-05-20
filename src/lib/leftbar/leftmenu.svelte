@@ -15,8 +15,9 @@
 	let password = '';
 
 	function active() {
-		window.location.href = '/profile';
+		window.location.href = '/khai-khong-mania';
 	}
+
 	let url = 'profile';
 
 	function login() {
@@ -106,6 +107,7 @@
 		</div>
 	</Cardleft>
 </div>
+
 <!-- PlaygameTest-->
 <div class="dispay-card">
 	<Cardleft>

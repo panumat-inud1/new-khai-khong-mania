@@ -10,10 +10,11 @@
 
 <div class="back" />
 <footer>
+	<!-- 
 	{#if playgame}
 		<Button variant="raised" on:click={() => (playgame = !playgame)}>Back</Button>
 	{/if}
-
+	-->
 	<p>Copyright &copy; {now.getFullYear()} <a href="http://www.fysidea.com">Fysidea Team.</a></p>
 </footer>
 
