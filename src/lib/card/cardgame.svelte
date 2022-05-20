@@ -2,13 +2,19 @@
 	export let height;
 	export let widht;
 	let x;
-	$: if (widht > 840) {
+	$: if (widht >= 1024) {
 		widht = 1024;
 		height = height - 16;
+	} else if (widht > 750 && widht < 1024){
+		widht = widht - 15;
+		height = height - 15;
+	} else {
+		widht = widht - 10;
+		height = height - 10;
 	}
 </script>
 
-<article
+<div
 	class="container-card"
 	style="min-height: {height}px;max-height: {height}px;max-width: {widht}px;min-width: {widht}px;"
 >
@@ -19,7 +25,7 @@
 			</slot>
 		</div>
 	</div>
-</article>
+</div>
 
 <style>
 	/* สีหน้าจอเกมส */
@@ -43,12 +49,11 @@
 		max-width: 1024px;
 		min-width: 1024px;
  		*/
-		padding: 0.5%;
 
+		padding: 0.5%;
 		border: 3px solid #f05e29;
 		border-radius: 15px;
 		box-shadow: 0px 6px 14px -5px rgb(0 0 0 / 10%);
 		background-image: radial-gradient(#f6ebd8ed, #f8e9cc, #f6ddc5, #f7dbbf);
 	}
-
 </style>
