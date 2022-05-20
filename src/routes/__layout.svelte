@@ -15,32 +15,13 @@
 	import { playgame } from '../stores';
 	let playgameFullscreen: false;
 
-	// รับค่าจาก Stroes
-	/*playgame.subscribe((value) => {
-		playgameFullscreen = value;
-	}); */
-	//  Update Stroes
-	function fullscreen() {
-		playgame.update(() => (playgameFullscreen = !playgameFullscreen));
-	}
-	// Set Stroes
-	function sets() {
-		if (playgameFullscreen == false) {
-			playgame.set(true);
-		} else {
-			playgame.set(false);
-		}
-	}
-
-	//	export let playgame = false;
 	const phone = 840;
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-
 <!-- screen on Desktop and phone-->
-{#if $playgame == "close"}
+{#if $playgame == 'close'}
 	<div transition:fade class="container-color">
 		<div class="container-full">
 			<!-- screen on Phone -->
@@ -70,7 +51,7 @@
 {/if}
 
 <!-- Play Game-->
-{#if $playgame == "full"}
+{#if $playgame == 'full'}
 	<div transition:fade class="container-playgame">
 		<slot />
 	</div>
@@ -90,7 +71,7 @@
 		max-width: 1024px;
 		margin: 0 auto;
 
-		background: url(imags/i1.png) 0% 0% repeat-y;
+		background: url(/imags/i1.png) 0% 0% repeat-y;
 		background-size: 100% auto;
 	}
 	.top-menu {
