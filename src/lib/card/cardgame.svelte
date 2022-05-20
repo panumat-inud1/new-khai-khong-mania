@@ -51,25 +51,4 @@
 		background-image: radial-gradient(#f6ebd8ed, #f8e9cc, #f6ddc5, #f7dbbf);
 	}
 
-	@media (max-width: 840px) {
-		.container-card {
-			min-width: 768px;
-			max-width: 768px;
-		}
-	}
-
-	@media (max-width: 576px) {
-		.container-card {
-			/* width */
-			min-width: 370px;
-			max-width: 370px;
-
-			/* height 568 */
-			min-height: 630px;
-			max-height: 630px;
-		}
-		.position {
-			height: 630px;
-		}
-	}
 </style>
