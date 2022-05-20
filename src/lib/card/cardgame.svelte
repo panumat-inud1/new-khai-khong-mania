@@ -27,7 +27,6 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
-		
 	}
 	.container-card {
 		width: 100%;
@@ -45,27 +44,5 @@
 		border-radius: 15px;
 		box-shadow: 0px 6px 14px -5px rgb(0 0 0 / 10%);
 		background-image: radial-gradient(#f6ebd8ed, #f8e9cc, #f6ddc5, #f7dbbf);
-	}
-
-	@media (max-width: 840px) {
-		.container-card {
-			min-width: 768px;
-			max-width: 768px;
-		}
-	}
-
-	@media (max-width: 576px) {
-		.container-card {
-			/* width */
-			min-width: 370px;
-			max-width: 370px;
-
-			/* height 568 */
-			min-height: 630px;
-			max-height: 630px;
-		}
-		.position {
-			height: 630px;
-		}
 	}
 </style>
