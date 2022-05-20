@@ -7,8 +7,9 @@
 	export let width;
 	export let height;
 	export let z;
+
 	function active() {
-		window.location.href = 'profile/shop';
+		window.location.href = 'khai-khong-mania/machineshop/machine';
 	}
 	
 </script>
