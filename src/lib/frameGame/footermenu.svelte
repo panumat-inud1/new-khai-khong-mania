@@ -20,7 +20,7 @@ import { fade, fly } from 'svelte/transition';
 		height: 5%;
 		bottom: 0;
 		border-radius: 0px 0px 12px 12px;
-		z-index: 99;
+		z-index: 50;
 		background-color: #f05e29;
 
 		background-image: radial-gradient(#dc8455, #de7238, #de611e, #dc540b);

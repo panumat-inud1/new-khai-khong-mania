@@ -1,14 +1,6 @@
-<script lang="ts">
-	export let height;
-	export let widht;
-</script>
-
-<article
-	class="container-card"
-	style="min-height: {height}px;max-height: {height}px;max-width: {widht}px;min-width: {widht}px;"
->
+<article class="container-card">
 	<div class="game-bg-color">
-		<div class="position" style="height: {height}px;">
+		<div class="position">
 			<slot name="content">
 				<span class="missing">Unknown content</span>
 			</slot>
@@ -27,18 +19,18 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
-		
+		height: 768px;
 	}
 	.container-card {
 		width: 100%;
 		height: 100%;
 		/* ขนาดจอเกมส์ */
-		/*min-height: 768px;
+		min-height: 768px;
 		max-height: 768px;
 
 		max-width: 1024px;
-		min-width: 1024px;
- 		*/
+		max-width: 1024px;
+
 		padding: 0.5%;
 
 		border: 3px solid #f05e29;

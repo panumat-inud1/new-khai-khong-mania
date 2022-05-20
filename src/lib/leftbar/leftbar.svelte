@@ -55,7 +55,7 @@
 		height: auto;
 		width: 100%;
 		overflow: hidden;
-		z-index: 2;
+		z-index: 99;
 	}
 
 	* :global(.app-content) {

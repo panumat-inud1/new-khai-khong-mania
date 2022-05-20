@@ -29,4 +29,5 @@
 		width: auto !important;
 		position: static !important;
 	}
+
 </style>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	/*import Header from '$lib/header/Header.svelte';*/
 	import Topbar from '$lib/topbar/Topbar.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
@@ -6,7 +7,6 @@
 	import Leftbar from '$lib/leftbar/leftbar.svelte';
 	import Leftmenu from '$lib/leftbar/leftmenu.svelte';
 	import Topmenu_2 from '$lib/topbar/topmenu-2.svelte';
-
 	let innerWidth;
 	let innerHeight;
 	let open = false;
@@ -17,98 +17,47 @@
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<!-- screen on Phone -->
-{#if innerWidth < phone}
-	<div class="container-color-phone">
-		<div class="container-bg">
-			{#if playgame == false}
+
+<!-- screen on Desktop and phone-->
+{#if playgame == false}
+	<div class="container-color">
+		<div class="container-full">
+			<!-- screen on Phone -->
+			{#if innerWidth < phone}
 				<Topbar bind:open />
-				<Leftbar {playgame} bind:open />
-				<Topmenu_2 />
+				<Leftbar bind:open />
 			{/if}
-			<!-- Play Game Phone-->
+			<!-- End screen on Phone -->
 
-			<div class="content-phone">
-				<slot />
+			<div class="top-menu">
+				<Topmenu_2 />
 			</div>
+			<main>
+				<div class="left-menu">
+					{#if innerWidth > phone}
+						<Leftmenu bind:playgame />
+					{/if}
+				</div>
+				<div class="content">
+					<slot />
+				</div>
+			</main>
 
-			<div class="footer">
-				<div class="footer-phone" />
-			</div>
+			<img src="/imags/layer.png" alt="footer" />
 		</div>
 	</div>
 {/if}
-
-<!-- screen on Desktop -->
-
-{#if innerWidth > phone}
-	<div class="container-color">
-		<div class="container-full">
-			{#if playgame == false}
-				<div class="top-menu">
-					<Topmenu_2 />
-				</div>
-				<main>
-					<div class="left-menu">
-						<Leftmenu bind:playgame />
-					</div>
-					<div class="content">
-						<slot />
-					</div>
-				</main>
-			{/if}
-			<!-- Play Game-->
-			{#if playgame}
-				<div class="content-playgame">
-					<slot />
-				</div>
-			{/if}
-			<div class="footer" >
-				<div class="footer-desktop" />
-			</div>
-		</div>
+<!-- Play Game-->
+{#if playgame}
+	<div class="container-playgame">
+		<slot />
 	</div>
 {/if}
 
 <Footer bind:playgame />
 
 <style>
-	/* Screen on All*/
-	.footer {
-		position: relative;
-		bottom: 0;
-		width: inherit;
-	}
-
-	/* Screen on phone */
-	.container-color-phone {
-		background-color: rgb(192, 232, 243);
-	}
-	.container-bg {
-		background: url(imags/i1.png) 0% 0% repeat-y;
-		background-size: 100% auto;
-	}
-	.content-phone {
-		padding-top: 3%;
-		padding-left: 5%;
-		padding-right: 5%;
-	}
-	.footer-phone {
-		position: relative;
-		background: url(imags/layer.png) no-repeat;
-		height: 798px;
-		background-size: 101% 100%;
-	}
-
-	@media (max-width: 430px) {
-		.footer-phone {
-			background: url(imags/layer.png) no-repeat;
-			height: 403px;
-			background-size: 101% 100%;
-		}
-	}
-
-	/* Screen on DeskTop */
+	/* Screen on DeskTop  and*/
 	.container-color {
 		max-width: 1024px;
 		margin: 0 auto;
@@ -121,6 +70,7 @@
 
 		background: url(imags/i1.png) 0% 0% repeat-y;
 		background-size: 100% auto;
+	
 	}
 	.top-menu {
 		display: flex;
@@ -155,20 +105,47 @@
 		padding-left: 3%;
 		padding-right: 3%;
 	}
-	.content-playgame {
+	img {
 		width: 100%;
-		box-sizing: border-box;
-		height: auto;
-		padding-top: 3%;
-		padding-left: 5%;
-		padding-right: 5%;
+		height: 1024px;
+		object-position: center;
+		object-fit: cover;
 	}
 
-	.footer-desktop {
+	/* Screen PlayGame */
+	.container-playgame {
+		display: flex;
+		justify-content: center;
+		padding-top: 2%;
 		max-width: 1024px;
-		height: 1058px;
-		background: url(imags/layer.png) 0% 0% no-repeat;
-		background-size: 101% 100%;
-		z-index: 2;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	@media (max-width: 840px) {
+		img {
+			height: 820px;
+		}
+		.left-menu {
+			width: 0%;
+			padding-top: 0%;
+			padding-left: 0%;
+		}
+		.content {
+			width: 100%;
+		}
+
+		.container-playgame {
+			padding-top: 13%;
+		}
+	}
+
+	@media (max-width: 430px) {
+		img {
+			height: 420px;
+		}
+		.container-playgame {
+			padding-top: 1%;
+		}
 	}
 </style>
