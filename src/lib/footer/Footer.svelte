@@ -1,28 +1,21 @@
 <script lang="ts">
 	import Button, { Label } from '@smui/button';
 	$: now = new Date();
-	export let playgame: boolean;
+	
 
 	function back() {
 		window.location.href = '/';
 	}
 </script>
 
-<div class="back" />
+<!-- <Button variant="raised" on:click={() => (playgame = !playgame)}>ขยายจอ</Button> -->
 <footer>
-	<!-- 
-	{#if playgame}
-		<Button variant="raised" on:click={() => (playgame = !playgame)}>Back</Button>
-	{/if}
-	-->
-	<p>Copyright &copy; {now.getFullYear()} <a  href="http://www.fysidea.com">Fysidea Team.</a></p>
+	<p>Copyright &copy; {now.getFullYear()} <a href="http://www.fysidea.com">Fysidea Team.</a></p>
+
 </footer>
 
 <style>
-	.back {
-		position: fixed;
-		display: flex;
-	}
+
 	footer {
 		display: flex;
 		position: fixed;
@@ -33,7 +26,7 @@
 		width: 100%;
 		background: transparent;
 		height: 20px;
-		z-index: 3;
+		z-index: 65;
 	}
 
 	footer a {

@@ -5,7 +5,7 @@
 	import Leftmenu from './leftmenu.svelte';
 
 	export let open: boolean;
-	export let playgame:boolean;
+	
 	let active = 'Inbox';
 
 	function setActive(value: string) {
@@ -34,7 +34,7 @@
 					<Text>Home</Text>
 				</Item>
 			</List>-->
-			<Leftmenu bind:playgame/>
+			<Leftmenu/>
 		</Content>
 	</Drawer>
 

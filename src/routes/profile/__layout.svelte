@@ -4,7 +4,6 @@
 
 <CardGame>
 	<div slot="content">
-		 <slot /> 
+		<slot />
 	</div>
 </CardGame>
-

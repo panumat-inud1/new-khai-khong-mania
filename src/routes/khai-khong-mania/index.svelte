@@ -1,10 +1,32 @@
-<script>
+<script lang="ts">
 	import Game from './game.svelte';
 	import Headermenu from '$lib/frameGame/headermenu.svelte';
 	import Footermenu from '$lib/frameGame/footermenu.svelte';
 	import Container from '$lib/frameGame/container.svelte';
+	import { fade } from 'svelte/transition';
 	function Active() {
+		$playgame = 'close';
 		window.location.href = '/';
+	}
+	//รับค่าจาก Stores
+	import { playgame, userName, logins } from '../../stores';
+
+	let playgameFullscreen: Boolean;
+	// รับค่าจาก Stroes
+
+	/* playgame.subscribe((value) => {
+		playgameFullscreen = value;
+	});
+	 */
+
+	//  Update Stroes
+	function fullscreen() {
+		//playgame.update(() => ("close"));
+		if ($playgame == 'close') {
+			$playgame = 'full';
+		} else {
+			$playgame = 'close';
+		}
 	}
 </script>
 
@@ -14,19 +36,22 @@
 			TOP MENU GAME
 			<a href="khai-khong-mania/machineshop/machine">SHOP</a>
 			<a href="khai-khong-mania/storehouse/storehouse">STOREHOUSE</a>
+			<div class="screen" on:click={fullscreen}>ขยายจอ[x]</div>
 		</div>
 	</div>
 </Headermenu>
 
 <Container>
 	<div slot="content">
-		<Game />
+		<div transition:fade>
+			<Game />
+		</div>
 	</div>
 </Container>
 <Footermenu>
 	<div slot="content">
 		<div class="footer-item">
-			<div on:click={Active}>Home</div>
+			<div on:click={Active}>[Home]</div>
 		</div>
 	</div>
 </Footermenu>
@@ -38,6 +63,11 @@
 		height: 80%;
 		top: 20%;
 		left: 1%;
+	}
+	.screen {
+		position: absolute;
+		right: 5%;
+		top: 0%;
 	}
 	.footer-item {
 		position: absolute;
