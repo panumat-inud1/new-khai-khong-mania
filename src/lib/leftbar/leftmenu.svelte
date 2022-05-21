@@ -65,6 +65,9 @@
 						<Button on:click={logout} style="width: 100%;" variant="raised">LOGOUT</Button>
 					</div>
 				</div>
+				<div class="field-text">
+					<Button on:click={()=>(window.location.href = '/screens')} style="width: 100%;" variant="raised">TEST DISPLAY</Button>
+				</div>
 			</div>
 		</Cardleft>
 	</div>

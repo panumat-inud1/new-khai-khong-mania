@@ -11,14 +11,6 @@
 	//รับค่าจาก Stores
 	import { playgame, userName, logins } from '../../stores';
 
-	let playgameFullscreen: Boolean;
-	// รับค่าจาก Stroes
-
-	/* playgame.subscribe((value) => {
-		playgameFullscreen = value;
-	});
-	 */
-
 	//  Update Stroes
 	function fullscreen() {
 		//playgame.update(() => ("close"));
@@ -51,7 +43,7 @@
 <Footermenu>
 	<div slot="content">
 		<div class="footer-item">
-			<div on:click={Active}>[Home]</div>
+			<div on:click={Active}>[Exit Game]</div>
 		</div>
 	</div>
 </Footermenu>

@@ -23,6 +23,12 @@ export const logins = writable(
 );
 logins.subscribe((val) => browser && (localStorage.logins = val));
 
+
+//Fullscreen
+export const screen = writable(browser && (localStorage.getItem("screen") || "close"));
+screen.subscribe((val) => browser && (localStorage.screen = val));
+
+
 /*  1
 const userNamer = JSON.(browser && localStorage.getItem("user")) || {
     name: "admin",

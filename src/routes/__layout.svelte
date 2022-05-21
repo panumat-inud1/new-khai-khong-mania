@@ -12,7 +12,7 @@
 	let open = false;
 
 	//รับค่าจาก Stores
-	import { playgame } from '../stores';
+	import { playgame, screen } from '../stores';
 	let playgameFullscreen: false;
 
 	const phone = 840;
@@ -20,41 +20,47 @@
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<!-- screen on Desktop and phone-->
-{#if $playgame == 'close'}
-	<div transition:fade class="container-color">
-		<div class="container-full">
-			<!-- screen on Phone -->
-			{#if innerWidth < phone}
-				<Topbar bind:open />
-				<Leftbar bind:open />
-			{/if}
-			<!-- End screen on Phone -->
+{#if $screen == 'close'}
+	<!-- screen on Desktop and phone-->
+	{#if $playgame == 'close'}
+		<div transition:fade class="container-color">
+			<div class="container-full">
+				<!-- screen on Phone -->
+				{#if innerWidth < phone}
+					<Topbar bind:open />
+					<Leftbar bind:open />
+				{/if}
+				<!-- End screen on Phone -->
 
-			<div class="top-menu">
-				<Topmenu_2 />
+				<div class="top-menu">
+					<Topmenu_2 />
+				</div>
+				<main>
+					<div class="left-menu">
+						{#if innerWidth > phone}
+							<Leftmenu />
+						{/if}
+					</div>
+					<div class="content">
+						<slot />
+					</div>
+				</main>
+
+				<img src="/imags/layer.png" alt="footer" />
 			</div>
-			<main>
-				<div class="left-menu">
-					{#if innerWidth > phone}
-						<Leftmenu />
-					{/if}
-				</div>
-				<div class="content">
-					<slot />
-				</div>
-			</main>
-
-			<img src="/imags/layer.png" alt="footer" />
 		</div>
-	</div>
+	{/if}
+
+	<!-- Play Game-->
+	{#if $playgame == 'full'}
+		<div transition:fade class="container-playgame">
+			<slot />
+		</div>
+	{/if}
 {/if}
 
-<!-- Play Game-->
-{#if $playgame == 'full'}
-	<div transition:fade class="container-playgame">
-		<slot />
-	</div>
+{#if $screen == 'full'}
+	<slot />
 {/if}
 
 <Footer />
@@ -119,11 +125,10 @@
 		display: flex;
 		justify-content: center;
 		padding-top: 1%;
-		
+
 		max-width: 1024px;
 		height: auto;
 		margin: 0 auto;
-		
 	}
 
 	@media (max-width: 840px) {
@@ -139,7 +144,7 @@
 			width: 100%;
 		}
 
-	/*	.container-playgame {
+		/*	.container-playgame {
 			padding-top: 13%;
 		} */
 	}
