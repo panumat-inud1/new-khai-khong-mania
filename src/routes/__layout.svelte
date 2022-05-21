@@ -119,7 +119,7 @@
 		display: flex;
 		justify-content: center;
 		padding-top: 1%;
-		padding-bottom: 1%;
+		
 		max-width: 1024px;
 		height: auto;
 		margin: 0 auto;
