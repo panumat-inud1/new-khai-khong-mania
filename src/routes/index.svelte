@@ -13,6 +13,17 @@
 		{ id: '3', img: '125*133', title: 'Step3', fieldnumber: 0 },
 		{ id: '4', img: '125*133', title: 'Step4', fieldnumber: 0 }
 	];
+
+	//รับค่าจาก Stores
+	import { playgame, userName, logins } from '../stores';
+
+	function fullscreen() {
+		if ($playgame == 'close') {
+			$playgame = 'full';
+		} else {
+			$playgame = 'close';
+		}
+	}
 </script>
 
 <svelte:head>
@@ -22,6 +33,10 @@
 
 <Cardmain>
 	<div slot="content">
+		<div class="close">
+			<label on:click={fullscreen} style="color: black;">[x]</label>
+		</div>
+
 		<h4>Coin Birds with money withdrawal Stable earnings with our affiliate program</h4>
 		<div class="col-2">
 			{#each images as im, i}
@@ -59,6 +74,9 @@
 </Cardmain>
 
 <style>
+	.close{
+		text-align: right;
+	}
 	.image-item-foot {
 		height: 125px;
 		width: 133px;
@@ -96,7 +114,6 @@
 		.right-images {
 			height: 120px;
 			width: 190px;
-		
 		}
 		.image-item-foot {
 			height: 70px;
