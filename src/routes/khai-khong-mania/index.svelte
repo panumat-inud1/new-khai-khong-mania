@@ -79,4 +79,13 @@
 	a {
 		color: yellow;
 	}
+
+	@media (max-width: 430px) {
+		a {
+			font-size: 10.5px;
+		}
+		.screen {
+		font-size: 13.5px;
+	}
+	}
 </style>

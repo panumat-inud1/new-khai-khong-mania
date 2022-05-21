@@ -19,20 +19,20 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
-		height: 768px;
+		height: 870px;
 	}
 	.container-card {
 		width: 100%;
 		height: 100%;
 		/* ขนาดจอเกมส์ */
-		min-height: 768px;
-		max-height: 768px;
+		min-height: 870px;
+		max-height: 870px;
 
 		max-width: 1024px;
 		max-width: 1024px;
 
 		padding: 0.5%;
-
+		
 		border: 3px solid #f05e29;
 		border-radius: 15px;
 		box-shadow: 0px 6px 14px -5px rgb(0 0 0 / 10%);
@@ -41,16 +41,16 @@
 
 	@media (max-width: 840px) {
 		.container-card {
-			min-width: 768px;
-			max-width: 768px;
+			min-width: 755px;
+			max-width: 755px;
 		}
 	}
 
 	@media (max-width: 576px) {
 		.container-card {
 			/* width */
-			min-width: 370px;
-			max-width: 370px;
+			min-width: 360px;
+			max-width: 360px;
 
 			/* height 568 */
 			min-height: 630px;

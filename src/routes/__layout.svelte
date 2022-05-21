@@ -118,10 +118,12 @@
 	.container-playgame {
 		display: flex;
 		justify-content: center;
-		padding-top: 2%;
+		padding-top: 1%;
+		padding-bottom: 1%;
 		max-width: 1024px;
 		height: auto;
 		margin: 0 auto;
+		
 	}
 
 	@media (max-width: 840px) {
@@ -137,9 +139,9 @@
 			width: 100%;
 		}
 
-		.container-playgame {
+	/*	.container-playgame {
 			padding-top: 13%;
-		}
+		} */
 	}
 
 	@media (max-width: 430px) {
