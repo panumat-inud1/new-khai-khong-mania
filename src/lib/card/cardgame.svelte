@@ -53,11 +53,11 @@
 			max-width: 350px;
 
 			/* height 568 */
-			min-height: 630px;
-			max-height: 630px;
+			min-height: 640px;
+			max-height: 640px;
 		}
 		.position {
-			height: 630px;
+			height: 640px;
 		}
 	}
 </style>
