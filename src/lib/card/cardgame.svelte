@@ -32,7 +32,7 @@
 		max-width: 1024px;
 
 		padding: 0.5%;
-		
+
 		border: 3px solid #f05e29;
 		border-radius: 15px;
 		box-shadow: 0px 6px 14px -5px rgb(0 0 0 / 10%);
@@ -41,16 +41,16 @@
 
 	@media (max-width: 840px) {
 		.container-card {
-			min-width: 755px;
-			max-width: 755px;
+			min-width: 745px;
+			max-width: 745px;
 		}
 	}
 
 	@media (max-width: 576px) {
 		.container-card {
 			/* width */
-			min-width: 360px;
-			max-width: 360px;
+			min-width: 350px;
+			max-width: 350px;
 
 			/* height 568 */
 			min-height: 630px;
