@@ -157,7 +157,7 @@ button:focus:not(:focus-visible) {
 	background-color: #212125;
 	background-color: var(--mdc-theme-surface, #d4eff7);
 
-	background: url(imags/i1.png) 0% 0% repeat-y;
+	background: url(/imags/i1.png) 0% 0% repeat-y;
 	background-size: 100% auto;
 	width: 256px;
 }

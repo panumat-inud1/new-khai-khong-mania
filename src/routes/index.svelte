@@ -15,13 +15,20 @@
 	];
 
 	//รับค่าจาก Stores
-	import { playgame, userName, logins } from '../stores';
+	import { playgame, userName, logins ,screen} from '../stores';
 
 	function fullscreen() {
 		if ($playgame == 'close') {
 			$playgame = 'full';
 		} else {
 			$playgame = 'close';
+		}
+	}
+	function screens() {
+		if ($screen == 'close') {
+			$screen = 'full';
+		} else {
+			$screen = 'close';
 		}
 	}
 </script>
@@ -35,6 +42,7 @@
 	<div slot="content">
 		<div class="close">
 			<label on:click={fullscreen} style="color: black;">[x]</label>
+			<label on:click={screens} style="color: black;">[TEST DISPLAY SCREEN]</label>
 		</div>
 
 		<h4>Coin Birds with money withdrawal Stable earnings with our affiliate program</h4>
