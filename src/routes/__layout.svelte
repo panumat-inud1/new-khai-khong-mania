@@ -57,13 +57,14 @@
 			<slot />
 		</div>
 	{/if}
+	<Footer />
 {/if}
 
 {#if $screen == 'full'}
 	<slot />
 {/if}
 
-<Footer />
+
 
 <style>
 	/* Screen on DeskTop  and*/
