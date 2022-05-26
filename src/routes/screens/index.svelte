@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from 'svelte';
+
 	function openFullscreen() {
 		document.documentElement.requestFullscreen();
 	}
@@ -11,7 +13,6 @@
 
 	//  Update Stroes
 	function fullscreen() {
-		
 		if ($screen == 'close') {
 			$screen = 'full';
 		} else {

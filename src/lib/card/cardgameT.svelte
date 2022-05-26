@@ -1,6 +1,17 @@
-<article class="container-card">
+<script>
+	let innerWidth;
+	let innerHeight;
+</script>
+
+<svelte:window bind:innerWidth bind:innerHeight />
+
+<article
+	class="container-card"
+	style="min-height: {innerHeight - 10}px;
+max-height: {innerHeight - 10}px;"
+>
 	<div class="game-bg-color">
-		<div class="position">
+		<div class="position" style="height: {innerHeight - 10}px">
 			<slot name="content">
 				<span class="missing">Unknown content</span>
 			</slot>
@@ -19,18 +30,18 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
-		height: 870px;
+		/*height: 870px; */
 	}
 	.container-card {
 		width: 100%;
 		height: 100%;
-		/* ขนาดจอเกมส์ */
+		/* ขนาดจอเกมส์  
 		min-height: 870px;
 		max-height: 870px;
 
+		min-width: 1024px;
 		max-width: 1024px;
-		max-width: 1024px;
-
+		*/
 		padding: 0.5%;
 
 		border: 3px solid #f05e29;
@@ -41,23 +52,14 @@
 
 	@media (max-width: 840px) {
 		.container-card {
-			min-width: 745px;
-			max-width: 745px;
+		
 		}
 	}
 
 	@media (max-width: 576px) {
 		.container-card {
 			/* width */
-			min-width: 350px;
-			max-width: 350px;
-
-			/* height 568 */
-			min-height: 640px;
-			max-height: 640px;
-		}
-		.position {
-			height: 640px;
+			
 		}
 	}
 </style>

@@ -15,6 +15,6 @@
 		width: 100%;
 		max-width: 1024px;
 		margin: 0 auto;
-		background-color: red;
+		background-color: rgb(32, 184, 1);
 	}
 </style>
