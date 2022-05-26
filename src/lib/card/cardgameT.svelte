@@ -7,11 +7,11 @@
 
 <article
 	class="container-card"
-	style="min-height: {innerHeight - 10}px;
-max-height: {innerHeight - 10}px;"
+	style="min-height: {innerHeight - 15}px;
+max-height: {innerHeight - 15}px;"
 >
 	<div class="game-bg-color">
-		<div class="position" style="height: {innerHeight - 10}px">
+		<div class="position" style="height: {innerHeight - 15}px">
 			<slot name="content">
 				<span class="missing">Unknown content</span>
 			</slot>
@@ -52,14 +52,14 @@ max-height: {innerHeight - 10}px;"
 
 	@media (max-width: 840px) {
 		.container-card {
-		
+			width: 98.3%;
 		}
 	}
 
 	@media (max-width: 576px) {
 		.container-card {
 			/* width */
-			
+			width: 97.4%;
 		}
 	}
 </style>
