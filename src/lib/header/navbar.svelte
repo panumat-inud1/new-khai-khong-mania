@@ -6,6 +6,7 @@
 	let topAppBar: TopAppBarComponentDev;
 	import { playgame, screen, logins, routers, userName } from '../../stores';
 	import Collapsible from '$lib/collapsible/collapsible.svelte';
+	import Caption from '$lib/slide/Caption.svelte';
 	let innerWidth;
 	let innerHeight;
 
@@ -16,19 +17,18 @@
 		window.location.href = '/';
 	}
 
-	let menuheader = [
-		{ id: 1, name: 'GAME CENTER', action: '/' },
-		{ id: 2, name: 'SERVICE', action: '/' },
-		{ id: 3, name: 'REGISTER', action: '/' },
-		{ id: 4, name: 'LOGIN', action: '/' }
-		
+	let menus = [
+		{ id: 1, header: 'GAME CENTER', detial: ['Mobile', 'Desktop', 'Desktop'], action: '/' },
+		{ id: 2, header: 'SERVICE', detial: ['Mobile', 'Desktop'], action: '/' },
+		{ id: 3, header: 'REGISTER', detial: ['Mobile', 'Desktop'], action: '/' },
+		{ id: 4, header: 'LOGIN', detial: ['Mobile', 'Desktop'], action: '/' }
 	];
-	let detialmenu =[
+	let detialmenu = [
 		{ id: 1, name: 'GAME CENTER', action: '/' },
 		{ id: 2, name: 'SERVICE', action: '/' },
 		{ id: 3, name: 'REGISTER', action: '/' },
 		{ id: 4, name: 'LOGIN', action: '/' }
-	]
+	];
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
@@ -71,7 +71,6 @@
 				<IconButton class="material-icons" on:click={() => (menucollap = !menucollap)} touch
 					>menu</IconButton
 				>
-				{menucollap}
 			</Section>
 			<Section align="end" toolbar>
 				<IconButton class="material-icons" aria-label="Download" touch>settings</IconButton>
@@ -82,11 +81,11 @@
 		{#if menucollap}
 			<div class="menu-collap" transition:slide={{ duration: 500 }}>
 				<section>
-					{#each Array(4) as item, i}
-						<Collapsible headerText={'Collapse or Expand me'}>
-							{#each Array(5) as item, j}
+					{#each menus as { id, header, detial, action }}
+						<Collapsible headerText={header}>
+							{#each detial as item, j}
 								<div class="item">
-									<a href="#">content{j + 1}</a>
+									<a href="#">{item}</a>
 								</div>
 							{/each}
 						</Collapsible>
