@@ -21,7 +21,14 @@
 		{ id: 2, name: 'SERVICE', action: '/' },
 		{ id: 3, name: 'REGISTER', action: '/' },
 		{ id: 4, name: 'LOGIN', action: '/' }
+		
 	];
+	let detialmenu =[
+		{ id: 1, name: 'GAME CENTER', action: '/' },
+		{ id: 2, name: 'SERVICE', action: '/' },
+		{ id: 3, name: 'REGISTER', action: '/' },
+		{ id: 4, name: 'LOGIN', action: '/' }
+	]
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
