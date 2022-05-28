@@ -26,7 +26,7 @@
 <style>
 	.container {
 		color: rgb(145, 145, 145);
-		background-color: rgb(11, 11, 11);
+		background-color: rgb(34, 33, 33);
 	}
 	.content-footer {
 		position: relative;

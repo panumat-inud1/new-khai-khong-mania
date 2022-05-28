@@ -15,7 +15,7 @@
 {#if innerWidth > phone}
 	<div class="container">
 		<ul class="conten-left">
-			<li><a href="#home">Home(LOGO)</a></li>
+			<li><a href="/">Home(LOGO)</a></li>
 		</ul>
 		<ul class="conten-center">
 			<li class="dropdown">
@@ -26,13 +26,12 @@
 					<a href="#">Link 3</a>
 				</div>
 			</li>
-			<li><a href="#news">บริการลูกค้า</a></li>
+			<li><a href="/service">บริการลูกค้า</a></li>
 		</ul>
 		<ul class="conten-right">
 			<li>
-				<a style="border-right: 1px solid rgb(48, 48, 48);" href="#login">สมัครสมาชิก</a><a
-					href="#login">ล๊อคอิน</a
-				>
+				<a style="border-right: 1px solid rgb(48, 48, 48);" href="/register">สมัครสมาชิก</a>
+				<a href="/login">ล๊อคอิน</a>
 			</li>
 		</ul>
 	</div>
@@ -76,7 +75,7 @@
 		padding: 0;
 		overflow: hidden;
 
-		line-height: 40px;
+		line-height: 30px;
 		background-color: rgba(15, 15, 15, 0.9);
 		border-bottom: 2px solid rgb(228, 30, 38);
 	}
@@ -92,7 +91,7 @@
 		text-align: center;
 		padding: 14px 16px;
 		text-decoration: none;
-		font-size: 25px;
+		font-size: 18px;
 	}
 	a:hover {
 		color: #f9f9f9;

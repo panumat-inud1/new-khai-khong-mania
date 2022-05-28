@@ -11,19 +11,18 @@
 <main>
 	<slot />
 </main>
-<FooterWeb />
-
 <section>
 	{#each Array(4) as item, i}
 		<Collapsible headerText={'Collapse or Expand me'}>
 			{#each Array(5) as item, j}
 				<div class="item">
-					<a href="#">{j + 1}</a>
+					<a href="#">content{j + 1}</a>
 				</div>
 			{/each}
 		</Collapsible>
 	{/each}
 </section>
+<FooterWeb />
 
 <style>
 	main {
@@ -36,9 +35,12 @@
 	}
 
 	section {
-		width: 50%;
+		width: 100%;
 	}
 	.item {
-		background-color: yellowgreen;
+		padding: 3px;
+	}
+	.item:hover{
+		background-color: #222;
 	}
 </style>

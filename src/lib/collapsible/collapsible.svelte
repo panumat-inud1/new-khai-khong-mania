@@ -4,6 +4,7 @@
 	export let headerText;
 
 	let expanded = false;
+	import { fade, fly, slide } from 'svelte/transition';
 </script>
 
 <div class="collapsible">
@@ -16,18 +17,20 @@
 			</svg>
 		</button>
 	</h3>
-
-	<div class="contents" hidden={!expanded}>
-		<div class="display-content">
-			<slot />
+	{#if expanded}
+		<div class="contents" hidden={!expanded}>
+			<div class="display-content" transition:slide={{ duration: 500 }}>
+				<slot />
+			</div>
 		</div>
-	</div>
+	{/if}
 </div>
 
 <style>
 	.collapsible {
 		border-bottom: 1px solid var(--gray-light, #eee);
 	}
+
 	.display-content {
 		background-color: #050505a0;
 	}
