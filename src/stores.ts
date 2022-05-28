@@ -5,8 +5,6 @@ import { browser } from "$app/env";
 export const playgame = writable(browser && (localStorage.getItem("playgame") || "close"));
 playgame.subscribe((val) => browser && (localStorage.playgame = val));
 
-//url router
-export const url = writable('/khai-khong-mania');
 
 //username
 export const userName = writable(
@@ -26,6 +24,14 @@ logins.subscribe((val) => browser && (localStorage.logins = val));
 //Fullscreen
 export const screen = writable(browser && (localStorage.getItem("screen") || "close"));
 screen.subscribe((val) => browser && (localStorage.screen = val));
+
+
+
+//url router
+export const routers = writable(browser && (localStorage.getItem("routers") || "hid"));
+
+routers.subscribe((val) => browser && (localStorage.routers = val));
+
 
 
 /*  1
