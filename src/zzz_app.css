@@ -12,10 +12,13 @@
 	--heading-color: rgba(0, 0, 0, 0.7);
 	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
+	--column-width: 42rem;
+	--column-margin-top: 4rem;
 }
 
 body {
 	font-family: var(--font-mono);
+	min-height: 100vh;
 	margin: 0;
 	background-color: var(--primary-color);
 	background: linear-gradient(
@@ -26,12 +29,84 @@ body {
 	);
 }
 
+body::before {
+	content: '';
+	width: 80vw;
 
-
-@media (min-width: 720px) {
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 10vw;
+	z-index: -1;
+	background: radial-gradient(
+		50% 50% at 50% 50%,
+		var(--pure-white) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	opacity: 0.05;
 }
 
-/*-----------------------------edit material ui-------------------------- */
+#svelte {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+h1,
+h2,
+p {
+	font-weight: 400;
+	color: var(--heading-color);
+}
+
+p {
+	line-height: 1.5;
+}
+
+a {
+	color: var(--accent-color);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 2rem;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1rem;
+}
+
+pre {
+	font-size: 16px;
+	font-family: var(--font-mono);
+	background-color: rgba(255, 255, 255, 0.45);
+	border-radius: 3px;
+	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+	padding: 0.5em;
+	overflow-x: auto;
+	color: var(--text-color);
+}
+
+input,
+button {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+button:focus:not(:focus-visible) {
+	outline: none;
+}
+
+@media (min-width: 720px) {
+	h1 {
+		font-size: 2.4rem;
+	}
+}
 
 /* Scroll Bar */
 
@@ -60,13 +135,13 @@ body {
 :root {
 	--mdc-layout-grid-margin-desktop: 0;
 	--mdc-layout-grid-gutter-desktop: 0;
-	--mdc-layout-grid-column-width-desktop: 0px;
+	--mdc-layout-grid-column-width-desktop: 72px;
 	--mdc-layout-grid-margin-tablet: 0;
 	--mdc-layout-grid-gutter-tablet: 0;
-	--mdc-layout-grid-column-width-tablet: 0px;
+	--mdc-layout-grid-column-width-tablet: 72px;
 	--mdc-layout-grid-margin-phone: 0;
 	--mdc-layout-grid-gutter-phone: 0;
-	--mdc-layout-grid-column-width-phone: 0px;
+	--mdc-layout-grid-column-width-phone: 72px;
 }
 
 /* color fonte fieldText */
@@ -74,6 +149,7 @@ body {
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
 	color: rgb(9, 8, 8);
 }
+
 
 /*  Drawer  */
 .mdc-drawer {
@@ -90,3 +166,4 @@ body {
 	margin-left: 256px;
 	margin-right: 0;
 }
+

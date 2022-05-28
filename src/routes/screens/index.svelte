@@ -14,6 +14,7 @@
 	//  Update Stroes
 	function fullscreen() {
 		if ($screen == 'close') {
+			alert('full');
 			$screen = 'full';
 		} else {
 			$screen = 'close';

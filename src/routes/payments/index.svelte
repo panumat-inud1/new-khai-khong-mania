@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Cardmain from '$lib/card/cardmain.svelte';
+
 	import DataTable, { Head, Body, Row, Cell, Pagination } from '@smui/data-table';
 
 	let datas = [
@@ -23,22 +24,48 @@
 		<DataTable table$aria-label="Todo list" style="width: 100%;">
 			<Head>
 				<Row>
+					<Cell>[x]</Cell>
+					<!--
 					<Cell numeric>User</Cell>
 					<Cell>Sum</Cell>
 					<Cell>PS</Cell>
 					<Cell>Purse</Cell>
-					<Cell>Date</Cell>
+					<Cell>Date</Cell> -->
 				</Row>
 			</Head>
 
 			<Body>
 				{#each datas as d, i}
 					<Row>
+						<Cell
+							>Checkbox
+							<DataTable>
+								<Head>
+									<Row>
+										<Cell numeric>User</Cell>
+										<Cell>Sum</Cell>
+										<Cell>PS</Cell>
+										<Cell>Purse</Cell>
+										<Cell>Date</Cell>
+									</Row>
+								</Head>
+								<Body>
+									<Row>
+										<Cell numeric>{d.username}</Cell>
+										<Cell>{d.sum}</Cell>
+										<Cell>{d.url}</Cell>
+										<Cell>{d.purse}</Cell>
+										<Cell>{d.date}</Cell>
+									</Row>
+								</Body>
+							</DataTable>
+						</Cell>
+						<!--
 						<Cell numeric>{d.username}</Cell>
 						<Cell>{d.sum}</Cell>
 						<Cell>{d.url}</Cell>
 						<Cell>{d.purse}</Cell>
-						<Cell>{d.date}</Cell>
+						<Cell>{d.date}</Cell> -->
 					</Row>
 				{/each}
 			</Body>

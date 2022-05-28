@@ -4,12 +4,11 @@
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
+<div hidden>
+	{innerHeight}
+</div>
 
-<article
-	class="container-card"
-	style="min-height: {innerHeight - 15}px;
-max-height: {innerHeight - 15}px;"
->
+<article class="container-card" style="min-height: {innerHeight - 15}px; max-height: {innerHeight - 15}px;">
 	<div class="game-bg-color">
 		<div class="position" style="height: {innerHeight - 15}px">
 			<slot name="content">

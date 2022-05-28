@@ -1,7 +1,6 @@
 import { writable } from "svelte/store";
 import { browser } from "$app/env";
 
-
 //Fullscreen
 export const playgame = writable(browser && (localStorage.getItem("playgame") || "close"));
 playgame.subscribe((val) => browser && (localStorage.playgame = val));
@@ -52,3 +51,5 @@ export const userName = writable(
 
 userName.subscribe((val) => browser && (localStorage.userName = val));
 */
+
+
