@@ -17,16 +17,15 @@
 body {
 	font-family: var(--font-mono);
 	margin: 0;
-	background-color: var(--primary-color);
+	/*	background-color: var(--primary-color);
 	background: linear-gradient(
 		180deg,
 		var(--primary-color) 0%,
 		var(--secondary-color) 10.45%,
 		var(--tertiary-color) 41.35%
 	);
+	*/
 }
-
-
 
 @media (min-width: 720px) {
 }

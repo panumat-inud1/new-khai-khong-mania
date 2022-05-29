@@ -49,7 +49,7 @@
 	.position {
 		position: absolute;
 		top: 37%;
-		width: 100%;
+		width: 90%;
 	}
 	.col-4 {
 		display: grid;

@@ -6,7 +6,7 @@
 	let topAppBar: TopAppBarComponentDev;
 	import { playgame, screen, logins, routers, userName } from '../../stores';
 	import Collapsible from '$lib/collapsible/collapsible.svelte';
-	import Caption from '$lib/slide/Caption.svelte';
+
 	let innerWidth;
 	let innerHeight;
 
@@ -29,6 +29,20 @@
 		{ id: 3, name: 'REGISTER', action: '/' },
 		{ id: 4, name: 'LOGIN', action: '/' }
 	];
+
+	let games = [
+		{ id: 1, name: 'KKM', action: '/khai-khong-mania' },
+		{ id: 2, name: 'GAME2', action: '/' },
+		{ id: 3, name: 'GAME3', action: '/' }
+	];
+
+	function playgames(value: string) {
+		if ($logins == 'login') {
+			window.location.href = value;
+		} else {
+			window.location.href = '/login';
+		}
+	}
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
@@ -42,9 +56,9 @@
 			<li class="dropdown">
 				<a href="javascript:void(0)" class="dropbtn">GAME CENTER</a>
 				<div class="dropdown-content">
-					<a href="#">Link 1</a>
-					<a href="#">Link 2</a>
-					<a href="#">Link 3</a>
+					{#each games as { id, name, action }}
+						<a href="javascript:void(0)" on:click={() => playgames(action)}>{name}</a>
+					{/each}
 				</div>
 			</li>
 			<li><a href="/service/service">SERVICE</a></li>
